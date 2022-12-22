@@ -1,0 +1,132 @@
+﻿<SyntaxDefinition name="Haxe"
+        xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="Comment" foreground="#FF57A64A" />
+    <Color name="String" foreground="#d69d85" />
+	<Color name="Char" foreground="#d69d85" />
+	<Color name="NumberLiteral" foreground="#FFb5cea8" exampleText="3.1415f"/>
+	<Color name="Preprocessor" foreground="#FF9B9B9B" exampleText="#region Title"/>
+	<Color name="MethodCall" foreground="#FFdcdcaa" exampleText="o.#{#ToString#}#();"/>
+	<Color name="Punctuation" exampleText="a(b.c);" />
+	<Color name="ClassType" foreground="#4ec9b0"/>
+	
+    <!-- This is the main ruleset. -->
+    <RuleSet>
+        <Span color="Comment" begin="//" />
+        <Span color="Comment" multiline="true" begin="/\*" end="\*/" />
+		
+		<Span color="Preprocessor">
+			<Begin>\#</Begin>
+			<RuleSet name="PreprocessorSet">
+				<Span>
+					<!-- preprocessor directives that allow comments -->
+					<Begin>
+						(define|undef|if|elif|else|end|line)\b
+					</Begin>
+				</Span>
+			</RuleSet>
+		</Span>
+		
+        <Span color="String">
+            <Begin>"</Begin>
+            <End>"</End>
+            <RuleSet>
+                <!-- nested span for escape sequences -->
+                <Span begin="\\" end="." />
+            </RuleSet>
+        </Span>
+
+		<Span color="Char">
+			<Begin>'</Begin>
+			<End>'</End>
+			<RuleSet>
+				<!-- nested span for escape sequences -->
+				<Span begin="\\" end="." />
+			</RuleSet>
+		</Span>
+
+        <Keywords foreground="#569cd6">
+			<Word>package</Word>
+			<Word>interface</Word>
+			<Word>class</Word>
+			<Word>abstract</Word>
+			<Word>implements</Word>
+			<Word>var</Word>
+			<Word>null</Word>
+			<Word>cast</Word>
+			<Word>typedef</Word>
+			<Word>untyped</Word>
+			<Word>macro</Word>
+			<Word>new</Word>
+			<Word>dynamic</Word>
+			<Word>enum</Word>
+			<Word>extends</Word>
+			<Word>extern</Word>
+			<Word>operator</Word>
+			<Word>override</Word>
+			<Word>true</Word>
+			<Word>overload</Word>
+			<Word>final</Word>
+			<Word>private</Word>
+			<Word>public</Word>
+			<Word>static</Word>
+			<Word>function</Word>
+			<Word>super</Word>
+			<Word>false</Word>
+			<Word>inline</Word>
+			<Word>this</Word>
+			<Word>set</Word>
+			<Word>get</Word>
+			<Word>never</Word>
+			<!-- ... -->
+        </Keywords>
+
+		<Keywords foreground="#d8a0df">
+			<Word>if</Word>
+			<Word>try</Word>
+			<Word>catch</Word>
+			<Word>continue</Word>
+			<Word>break</Word>
+			<Word>case</Word>
+			<Word>do</Word>
+			<Word>else</Word>
+			<Word>import</Word>
+			<Word>in</Word>
+			<Word>return</Word>
+			<Word>default</Word>
+			<Word>while</Word>
+			<Word>using</Word>
+			<Word>throw</Word>
+			<Word>for</Word>
+			<Word>switch</Word>
+		</Keywords>
+
+		<Keywords foreground="#4ec9b0">
+			<Word>Void</Word>
+			<Word>Float</Word>
+			<Word>Int</Word>
+			<Word>String</Word>
+			<Word>Bool</Word>
+			<Word>Dynamic</Word>
+		</Keywords>
+
+		<!-- Mark previous rule-->
+		<Rule color="MethodCall">
+			\b
+			[\d\w_]+  # an identifier
+			(?=\s*\() # followed by (
+		</Rule>
+
+		<!-- Digits -->
+		<Rule color="NumberLiteral">
+			\b0[xX][0-9a-fA-F]+  # hex number
+			|
+			(	\b\d+(\.[0-9]+)?   #number with optional floating point
+			|	\.[0-9]+           #or just starting with floating point
+			)
+			([eE][+-]?[0-9]+)? # optional exponent
+		</Rule>
+		<Rule color="Punctuation">
+			[?,.;()\[\]{}+\-/%*&lt;&gt;^+~!|&amp;]+
+		</Rule>
+    </RuleSet>
+</SyntaxDefinition>

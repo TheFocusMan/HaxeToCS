@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2f52fd04-61c1-451a-bfcb-1f6c6a297298</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>HaxeAnal</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CodeConvertor.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\CommandRun.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeIfElseMacro.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeNamespace.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeOpCodeCommand.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeUsing.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\IGenericTypeCap.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)IOpCodeCap.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)HaxeAnalyzer.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeCommand.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\HaxeImport.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)HaxeCustomAttributeData.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)HaxeKeywords.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\HaxeField.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\HaxeMember.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\HaxeMethod.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\HaxeType.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Members\IHaxeMember.vb" />
+  </ItemGroup>
+</Project>

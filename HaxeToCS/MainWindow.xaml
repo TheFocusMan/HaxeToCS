@@ -1,0 +1,47 @@
+﻿<Window x:Name="window" x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HaxeToCS"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Style="{DynamicResource CustomWindowStyle}">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Click="NewFileCreate" />
+                <MenuItem Header="_Open" Click="OpenFileClick" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Grid.Column="0" Header="Haxe Code">
+                    <Grid>
+                        <avalonEdit:TextEditor x:Name="ritchtextbox1" ShowLineNumbers="True" Margin="0,0,0,20"/>
+                        <Button Content="Analyze Code" VerticalAlignment="Bottom" Click="AnalyzeCodeClick"/>
+                    </Grid>
+                </GroupBox>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
+                <GroupBox Grid.Column="2" Header="C# Code">
+                    <Grid>
+                        <avalonEdit:TextEditor x:Name="ritchtextbox2" SyntaxHighlighting="C#" ShowLineNumbers="True" Margin="0,0,0,20"/>
+                        <Button Content="Convert Code" VerticalAlignment="Bottom" Click="ConvertCodeClick"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
+
+    </DockPanel>
+</Window>

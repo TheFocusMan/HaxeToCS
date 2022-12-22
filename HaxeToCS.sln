@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HaxeAnal", "HaxeAnal\HaxeAnal.shproj", "{2F52FD04-61C1-451A-BFCB-1F6C6A297298}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HaxeAnalyzeTest", "HaxeAnalyzeTest\HaxeAnalyzeTest.vbproj", "{5E8C4922-0EFA-4388-ADD5-59B8755A641F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HaxeToCS", "HaxeToCS\HaxeToCS.vbproj", "{CCEFE3F0-1103-4292-9CA7-C7A1B5F4FA30}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		HaxeAnal\HaxeAnal.projitems*{2f52fd04-61c1-451a-bfcb-1f6c6a297298}*SharedItemsImports = 13
+		HaxeAnal\HaxeAnal.projitems*{5e8c4922-0efa-4388-add5-59b8755a641f}*SharedItemsImports = 5
+		HaxeAnal\HaxeAnal.projitems*{ccefe3f0-1103-4292-9ca7-c7a1b5f4fa30}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E8C4922-0EFA-4388-ADD5-59B8755A641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8C4922-0EFA-4388-ADD5-59B8755A641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8C4922-0EFA-4388-ADD5-59B8755A641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8C4922-0EFA-4388-ADD5-59B8755A641F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEFE3F0-1103-4292-9CA7-C7A1B5F4FA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEFE3F0-1103-4292-9CA7-C7A1B5F4FA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEFE3F0-1103-4292-9CA7-C7A1B5F4FA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEFE3F0-1103-4292-9CA7-C7A1B5F4FA30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9997565-E831-4A0C-8F5E-16D034D6DEA3}
+	EndGlobalSection
+EndGlobal
